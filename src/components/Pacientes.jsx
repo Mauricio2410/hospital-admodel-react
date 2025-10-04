@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import './Pacientes.css';
+import '../styles/Pacientes.css'; // RUTA CORREGIDA
 
 const Pacientes = () => {
   const [pacientes, setPacientes] = useState([
     { id: 1, nombre: 'Juan Pérez', edad: 45, diagnostico: 'Hipertensión' },
     { id: 2, nombre: 'Ana Gómez', edad: 32, diagnostico: 'Diabetes Tipo 2' },
-    { id: 3, nombre: 'Carlos Sánchez', edad: 51, diagnostico: 'Chequeo General' },
   ]);
 
   const [nuevoPaciente, setNuevoPaciente] = useState({ nombre: '', edad: '', diagnostico: '' });
@@ -25,10 +24,7 @@ const Pacientes = () => {
   return (
     <div className="pacientes-container">
       <h2>Sección de Pacientes</h2>
-
-      {/* Este es el nuevo contenedor para las columnas */}
       <div className="pacientes-content-layout">
-
         <div className="form-paciente">
           <h3>Agregar Nuevo Paciente</h3>
           <form onSubmit={handleSubmit}>
@@ -47,7 +43,6 @@ const Pacientes = () => {
             <button type="submit" className="btn-agregar">Agregar</button>
           </form>
         </div>
-
         <div className="lista-pacientes-container">
           <h3>Listado Actual</h3>
           <div className="lista-pacientes">
@@ -60,7 +55,6 @@ const Pacientes = () => {
             ))}
           </div>
         </div>
-
       </div>
     </div>
   );

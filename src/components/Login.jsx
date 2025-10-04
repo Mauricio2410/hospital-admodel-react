@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import './Login.css';
+import '../styles/Login.css'; // RUTA CORREGIDA
 
-// Base de datos corregida: Gama es Admin, Salinas es Especialista
 const usersDB = [
   { id: 1, username: 'Salinas', password: '12345678', role: 'Especialista', name: 'Dr. Salinas' },
   { id: 2, username: 'Gama', password: '12345678', role: 'Admin', name: 'Admin Gama' },

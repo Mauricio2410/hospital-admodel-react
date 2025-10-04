@@ -1,26 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Header.css';
+import '../styles/Header.css';
 
 const Header = ({ user }) => {
   return (
     <header className="app-header">
       <h1 className="app-title">Hospital ADMODEL</h1>
       <nav>
-        {/* Lógica para el rol de Admin */}
+        {/* Botones para el Admin (ACTUALIZADOS) */}
         {user.role === 'Admin' && (
           <>
             <Link to="/pacientes" className="nav-button">Pacientes</Link>
-            <Link to="/medicos" className="nav-button">Médicos</Link>
-            <Link to="/citas" className="nav-button">Citas</Link>
+            <Link to="/especialistas" className="nav-button">Especialistas</Link> {/* CAMBIO */}
+            <Link to="/horarios" className="nav-button">Horarios</Link>
+            <Link to="/reportes" className="nav-button">Reportes</Link>
           </>
         )}
-        {/* Lógica para el rol de Especialista */}
+        {/* Botones para el Especialista */}
         {user.role === 'Especialista' && (
           <>
             <Link to="/pacientes" className="nav-button">Pacientes</Link>
-            <Link to="/citas" className="nav-button">Citas</Link>
             <Link to="/horarios" className="nav-button">Horarios</Link>
+            <Link to="/reportes" className="nav-button">Reportes</Link>
           </>
         )}
       </nav>
